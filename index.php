@@ -1,13 +1,14 @@
-<?php 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    echo "hos  geldiniz !<br>";
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    ?>
- 
-    <a href="postekle.php">Yeni post Ekle</a>
+        
+    <!-- <a href="postekle.php">Yeni post Ekle</a> -->
 
     <?php
     include 'config.php';
+    include 'navbar.php';
 
 
     $sql = "SELECT * FROM post";
@@ -25,6 +26,6 @@
         }
  
     }else {
-        echo "<h4>blog yazisi bulunamadi!</h4>";
+        echo "<h6>blog yazisi bulunamadi!</h6>";
     }
 ?>
