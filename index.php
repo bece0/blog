@@ -11,21 +11,25 @@
     include 'navbar.php';
 
 
-    $sql = "SELECT * FROM post";
+    if($balanti == true){
 
-    $result = $conn->query($sql);
+    
+    $sql = "SELECT * FROM post";    
+        $result = $conn->query($sql);
 
-    if (!$result) {
-        trigger_error('Invalid query: ' . $conn->error);
-    }
-
-    if ($result->num_rows > 0) {
-
-        while($row = $result->fetch_assoc()) {
-            echo $row["title"]. " (" . $row["date"]. ")<br>";
+        if (!$result) {
+            trigger_error('Invalid query: ' . $conn->error);
         }
- 
-    }else {
-        echo "<h6>blog yazisi bulunamadi!</h6>";
+
+        if ($result->num_rows > 0) {
+
+            while($row = $result->fetch_assoc()) {
+                echo $row["title"]. " (" . $row["date"]. ")<br>";
+            }
+    
+        }else {
+            echo "<h6>blog yazisi bulunamadi!</h6>";
+        }
+
     }
 ?>

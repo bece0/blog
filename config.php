@@ -6,11 +6,13 @@ $db_name = "blog";
 
 // Create connection
 $conn = new mysqli($servername, $db_username, $db_password, $db_name);
-
+$baglanti = false;
 // Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+    echo "Baglanti saglanamadi : " . $conn->connect_error;
+} else{
+    $baglanti = true;
+}
 //echo "Connected successfully";
 ?>
 
